@@ -44,8 +44,8 @@ jobs:
       - name: Build web
         run: |
           echo "Current directory: $(pwd)"
-          echo "Building Flutter web..."
-          flutter build web --release
+          echo "Building Flutter web with base-href..."
+          flutter build web --release --base-href="/port_design/"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4

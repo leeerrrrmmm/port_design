@@ -21,6 +21,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Verify project structure
+        run: |
+          ls -la
+          test -f pubspec.yaml && echo "pubspec.yaml exists" || exit 1
+          test -f lib/main.dart && echo "lib/main.dart exists" || exit 1
+      
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
